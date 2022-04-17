@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Welcome to SmartPot</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" th:href="@{vendors/owl-carousel/css/owl.carousel.min.css}">
+  <link rel="stylesheet" th:href="@{vendors/owl-carousel/css/owl.theme.default.css}">
+  <link rel="stylesheet" th:href="@{vendors/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{vendors/aos/css/aos.css}">
+  <link rel="stylesheet" th:href="@{css/style.min.css}">
+</head>
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
+  <header id="header-section">
+    <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
+    <div class="container">
+      <div class="navbar-brand-wrapper d-flex w-100">
+        <img alt="" th:src="@{img/logo-compact-sm.png}">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="mdi mdi-menu navbar-toggler-icon"></span>
+        </button> 
+      </div>
+      <div class="collapse navbar-collapse navbar-menu-wrapper" id="navbarSupportedContent">
+        <ul class="navbar-nav align-items-lg-center align-items-start ml-auto">
+          <li class="d-flex align-items-center justify-content-between pl-4 pl-lg-0">
+            <div class="navbar-collapse-logo">
+              <img alt="" th:src="@{img/logo-compact-sm.png}">
+            </div>
+            <button class="navbar-toggler close-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="mdi mdi-close navbar-toggler-icon pl-5"></span>
+            </button>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#header-section">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features-section">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#digital-marketing-section">Design</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#feedback-section">Team</a>
+          </li>
+          <li class="nav-item btn-contact-us pl-4 pl-lg-0">
+            <button class="btn btn-info" onclick="window.location.href = '/login';" th:text="${msg}">Login/Register
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div> 
+    </nav>   
+  </header>
+  <div class="banner" >
+    <div class="container">
+        <h1 class="font-weight-semibold">SmartPot</h1>
+        <h5 class="font-weight-normal text-muted pb-3">Many people worldwide have difficulties taking care of plants.
+            <br>We want to change that.</h5>
+        <img alt="" class="" height="380px" th:src="@{img/pot.png}">
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="container">
+      <section class="features-overview" id="features-section" >
+        <div class="content-header">
+          <h2>How does it work?</h2>
+          <h6 class="section-subtitle text-muted">Smart Pot is a device that will take care of your plants
+            automatically.</h6>
+        </div>
+        <div class="d-md-flex justify-content-between">
+          <div class="grid-margin d-flex justify-content-start">
+            <div class="features-width">
+              <img th:src="@{img/Group12.svg}" alt="" class="img-icons">
+              <h5 class="py-3">Automatic<br>Watering</h5>
+              <p class="text-muted">The pot will automatically water the plant with pre-set intervals.</p>
+              <!--a href="#"><p class="readmore-link">Readmore</p></a-->
+            </div>
+          </div>
+          <div class="grid-margin d-flex justify-content-center">
+            <div class="features-width">
+              <img th:src="@{img/Group7.svg}" alt="" class="img-icons">
+              <h5 class="py-3">Automatic<br>Lighting</h5>
+              <p class="text-muted">The pot will automatically give light to the plant with pre-set intervals.</p>
+              <!--a href="#"><p class="readmore-link">Readmore</p></a-->
+            </div>
+          </div>
+          <div class="grid-margin d-flex justify-content-end">
+            <div class="features-width">
+              <img th:src="@{img/Group5.svg}" alt="" class="img-icons">
+              <h5 class="py-3">Remind to<br>Fertilize plants</h5>
+              <p class="text-muted">The pot will remind you when to fertilize the plant.</p>
+              <!--a href="#"><p class="readmore-link">Readmore</p></a-->
+            </div>
+          </div>
+        </div>
+      </section>     
+      <section class="digital-marketing-service" id="digital-marketing-section">
+          <div class="row align-items-center">
+              <div class="col-12 col-lg-5 grid-margin grid-margin-lg-0" data-aos="fade-right">
+                  <h3 class="m-0">Modular Design</h3>
+                  <div class="col-lg-7 col-xl-6 p-0">
+                      <p class="font-weight-medium text-muted">The plant and the reservoir could be separated so that
+                          the user
+                          could clean the reservoir easily.</p>
+                  </div>
+              </div>
+              <div class="col-12 col-lg-7 p-0 img-digital grid-margin grid-margin-lg-0" data-aos="fade-left">
+                  <img alt="" height="400px" th:src="@{img/pot-explode.png}">
+              </div>
+          </div>
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-7 text-center flex-item grid-margin" data-aos="fade-right">
+            <img alt="" class="img-fluid" th:src="@{img/UIandDatabase.png}">
+          </div>
+            <div class="col-12 col-lg-5 flex-item grid-margin grid-margin-lg-0" data-aos="fade-left">
+                <h3 class="m-0">Plant Database</h3>
+                <div class="col-lg-9 col-xl-8 p-0">
+                    <!--p class="py-4 m-0 text-muted">hello world</p-->
+                    <p class="pb-2 font-weight-medium text-muted">SmartPot comes with a built-in database with all kinds
+                        of
+                        plant data for the user to easily select the perfect default setting for any plant. </p>
+                </div>
+                <!--button class="btn btn-info">Readmore</button-->
+            </div>
+        </div>
+      </section>
+        <section class="case-studies" id="case-studies-section">
+            <div class="row grid-margin">
+                <div class="col-12 text-center pb-5">
+                    <h2>More Pictures</h2>
+                    <!--h6 class="section-subtitle text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum.</h6-->
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in">
+                    <div class="card color-cards">
+                        <div class="card-body p-0">
+                            <div class="bg-primary text-center card-contents">
+                                <div class="card-image">
+                                    <img alt="" class="" height="255px" th:src="@{img/lighting.PNG}">
+                                </div>
+                                <!--                          <div class="card-desc-box d-flex align-items-center justify-content-around">-->
+                                <!--                            <div>-->
+                                <!--                              <h6 class="text-white pb-2 px-3">Know more about Online marketing</h6>-->
+                                <!--                              <button class="btn btn-white">Read More</button>-->
+                                <!--                            </div>-->
+                                <!--                          </div>-->
+                            </div>
+                            <div class="card-details text-center pt-4">
+                                <h6 class="m-0 pb-1">Lighting and Watering</h6>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card color-cards">
+                        <div class="card-body p-0">
+                            <div class="bg-warning text-center card-contents">
+                                <div class="card-image">
+                                    <img alt="" class="" height="260px" th:src="@{img/reservoir.png}">
+                                </div>
+                                <!--                          <div class="card-desc-box d-flex align-items-center justify-content-around">-->
+                                <!--                            <div>-->
+                                <!--                              <h6 class="text-white pb-2 px-3">Know more about Web Development</h6>-->
+                                <!--                              <button class="btn btn-white">Read More</button>-->
+                                <!--                            </div>-->
+                                <!--                          </div>-->
+                            </div>
+                            <div class="card-details text-center pt-4">
+                                <h6 class="m-0 pb-1">Reservoir</h6>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="card color-cards">
+                        <div class="card-body p-0">
+                            <div class="bg-violet text-center card-contents">
+                                <div class="card-image">
+                                    <img alt="" class="" height="280px" th:src="@{img/powersensors.png}">
+                                </div>
+                                <!--                          <div class="card-desc-box d-flex align-items-center justify-content-around">-->
+                                <!--                            <div>-->
+                                <!--                              <h6 class="text-white pb-2 px-3">Know more about Web Designing</h6>-->
+                                <!--                              <button class="btn btn-white">Read More</button>-->
+                                <!--                            </div>-->
+                                <!--                          </div>-->
+                            </div>
+                            <div class="card-details text-center pt-4">
+                                <h6 class="m-0 pb-1">Power, Sensors and Wiring</h6>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 stretch-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="card color-cards">
+                        <div class="card-body p-0">
+                            <div class="bg-success text-center card-contents">
+                                <div class="card-image">
+                                    <img alt="" class="" height="290px" th:src="@{img/overallform.png}">
+                                </div>
+                                <!--                          <div class="card-desc-box d-flex align-items-center justify-content-around">-->
+                                <!--                            <div>-->
+                                <!--                              <h6 class="text-white pb-2 px-3">Know more about Software Development</h6>-->
+                                <!--                              <button class="btn btn-white">Read More</button>-->
+                                <!--                            </div>-->
+                                <!--                          </div>-->
+                            </div>
+                            <div class="card-details text-center pt-4">
+                                <h6 class="m-0 pb-1">Overall Integration</h6>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="customer-feedback" id="feedback-section">
+            <div class="row">
+                <div class="col-12 text-center pb-5">
+                    <h2>Introduce the SmartPot Team</h2>
+                    <!--h6 class="section-subtitle text-muted m-0">Lorem ipsum dolor sit amet, tincidunt vestibulum.</h6-->
+                </div>
+                <div class="owl-carousel owl-theme grid-margin">
+                    <div class="card customer-cards">
+                        <div class="card-body">
+                            <div class="text-center">
+                      <!--                    <img th:src="@{img/face2.jpg}" width="89" height="89" alt="" class="img-customer">-->
+                      <p class="m-0 py-3 text-muted">The purpose of this subsystem is to give the device a way of
+                          watering, lighting, and possibly feeding the plant.
+                          The tasks in this system include a 3D model and print of the sprinkler head, with a
+                          consideration of the materials selected for the part itself, as well as unifying the lighting
+                          parts and the sprinkler to create a cohesive part.</p>
+                      <div class="content-divider m-auto"></div>
+                      <h6 class="card-title pt-3">Rachael Mahserjian</h6>
+                      <h6 class="customer-designation text-muted m-0">Head Design and Production</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card customer-cards">
+                <div class="card-body">
+                    <div class="text-center">
+                        <!--                    <img th:src="@{img/face3.jpg}" width="89" height="89" alt="" class="img-customer">-->
+                        <p class="m-0 py-3 text-muted">The pot will consist of a shell and a water resistant internal
+                            liner which will contain the plant.
+                            This subsystem will focus on ensuring that the pump system is adequate for the needs of the
+                            sprinkler design, and that the reservoir is designed in conjunction with the Piping & Water
+                            Resistance subsystem.</p>
+                        <div class="content-divider m-auto"></div>
+                        <h6 class="card-title pt-3">Brian Milano</h6>
+                        <h6 class="customer-designation text-muted m-0">Pump and Reservoir</h6>
+                    </div>
+                </div>
+              </div>
+              <div class="card customer-cards">
+                <div class="card-body">
+                    <div class="text-center">
+                        <!--                    <img th:src="@{img/face20.jpg}" width="89" height="89" alt="" class="img-customer">-->
+                        <p class="m-0 py-3 text-muted">This subsystem will manage the piping and water containment
+                            system from how it enters the reservoir, is propelled by the pump assembly, and exits the
+                            pot via tubing to the sprinkler head.
+                            Communication will be key for this portion of the design so that the aforementioned
+                            subsystems can all be correctly integrated into the water system as a whole.
+                        </p>
+                        <div class="content-divider m-auto"></div>
+                        <h6 class="card-title pt-3">Nicolas Wang</h6>
+                        <h6 class="customer-designation text-muted m-0">Piping and Water Resistance</h6>
+                    </div>
+                </div>
+              </div>
+              <div class="card customer-cards">
+                <div class="card-body">
+                    <div class="text-center">
+                        <!--                    <img th:src="@{img/face15.jpg}" width="89" height="89" alt="" class="img-customer">-->
+                        <p class="m-0 py-3 text-muted">Having learned through experience with the Mini Project and
+                            beyond, the team had developed a comprehensive understanding of the various benefits and
+                            drawbacks of different battery types.
+                            It has been discerned with full confidence that increasing voltage (by either using a larger
+                            battery or connecting small batteries in series) does not equate to a more powerful or
+                            power-efficient device. </p>
+                        <div class="content-divider m-auto"></div>
+                        <h6 class="card-title pt-3">Paul Demers</h6>
+                        <h6 class="customer-designation text-muted m-0">Power, Sensors and Wiring</h6>
+                    </div>
+                </div>
+              </div>
+              <div class="card customer-cards">
+                <div class="card-body">
+                    <div class="text-center">
+                        <!--                    <img th:src="@{img/face16.jpg}" width="89" height="89" alt="" class="img-customer">-->
+                        <p class="m-0 py-3 text-muted">In any system with multiple mechanical and electrical parts, it
+                            is necessary to ensure that all can be mounted to their base so there is enough room for
+                            proper operation.
+                            In this case, the Arduino, screen, battery casing, pump, and reservoir must all be contained
+                            within or around the edge of the pot so that the screen is visible, batteries are
+                            accessible, etc.
+                            Additionally, the sprinkler/lighting head must be manufactured so that it can attach to its
+                            adjustable mount, which must attach to the main pot base.
+                        <div class="content-divider m-auto"></div>
+                        <h6 class="card-title pt-3">Sam Wiegand</h6>
+                        <h6 class="customer-designation text-muted m-0">Overall Form & Integration</h6>
+                    </div>
+                </div>
+              </div>
+              <div class="card customer-cards">
+                <div class="card-body">
+                    <div class="text-center">
+                        <!--                    <img th:src="@{img/face1.jpg}" width="89" height="89" alt="" class="img-customer">-->
+                        <p class="m-0 py-3 text-muted">The basis of the project’s value proposition lies in the ability
+                            to store a database of plants and their respective requirements and have the product
+                            communicate with the database effectively.
+                            The specifications of the database are detailed above, but in order for the data to be
+                            translated into something tangible, it needs to be fetched by the Arduino and translated
+                            into code.</p>
+                        <div class="content-divider m-auto"></div>
+                        <h6 class="card-title pt-3">AJ Gevero</h6>
+                        <h6 class="customer-designation text-muted m-0">Control System</h6>
+                    </div>
+                </div>
+              </div>
+              <div class="card customer-cards">
+                <div class="card-body">
+                    <div class="text-center">
+                        <!--                    <img th:src="@{img/face2.jpg}" width="89" height="89" alt="" class="img-customer">-->
+                        <p class="m-0 py-3 text-muted">The User Interface and Database Subsystem not only provides a
+                            window for the user to monitor and modify the Smart Pot, but it is also the key component
+                            that connects the Arduino with the SQL Database in order to exchange important datas.</p>
+                        <div class="content-divider m-auto"></div>
+                        <h6 class="card-title pt-3">Luoyan Zhang</h6>
+                        <h6 class="customer-designation text-muted m-0">Web-UI and Database</h6>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact-details" id="contact-details-section">
+        <div class="row text-center text-md-left">
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+            <img alt="" class="pt-2" th:src="@{img/logo-full.png}" width="85%">
+            <div class="pt-2">
+              <p class="text-muted m-0"></p>
+              <p class="text-muted m-0"></p>
+            </div>         
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+            <h5 class="pb-2"></h5>
+            <p class="text-muted"></p>
+            <!--form>
+              <input type="text" class="form-control" id="Email" placeholder="Email id">
+            </form-->
+            <div class="pt-3">
+              <!--button class="btn btn-dark">Subscribe</button-->
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+            <h5 class="pb-2"></h5>
+            <!--a href="#"><p class="m-0 pb-2">Terms</p></a>
+            <a href="#" ><p class="m-0 pt-1 pb-2">Privacy policy</p></a> 
+            <a href="#"><p class="m-0 pt-1 pb-2">Cookie Policy</p></a> 
+            <a href="#"><p class="m-0 pt-1">Discover</p></a-->
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+              <h5 class="pb-2">Our address</h5>
+            <p class="text-muted">Troy, NY 12180</p>
+              <div class="d-flex justify-content-center justify-content-md-start">
+                <!--a href="#"><span class="mdi mdi-facebook"></span></a>
+                <a href="#"><span class="mdi mdi-twitter"></span></a>
+                <a href="#"><span class="mdi mdi-instagram"></span></a>
+                <a href="#"><span class="mdi mdi-linkedin"></span></a-->
+              </div>
+          </div>
+        </div>  
+      </section>
+      <footer class="border-top">
+        <p class="text-center text-muted pt-4">Copyright © 2020<a class="px-1" href="https://pot.doby2333.com:8081/">SmartPot
+          Team</a>All rights reserved.</p>
+      </footer>
+    </div> 
+  </div>
+  <script th:src="@{vendors/jquery/jquery.min.js}"></script>
+  <script th:src="@{vendors/bootstrap/bootstrap.min.js}"></script>
+  <script th:src="@{vendors/owl-carousel/js/owl.carousel.min.js}"></script>
+  <script th:src="@{vendors/aos/js/aos.js}"></script>
+  <script th:src="@{js/landingpage.js}"></script>
+</body>
+</html>
