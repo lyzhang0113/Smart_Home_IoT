@@ -25,7 +25,7 @@ public class IndexController {
         model.addAttribute("temp_map", sensorService.getRecentTemperatureData());
         model.addAttribute("humid_map", sensorService.getRecentHumidityData());
 
-        return "dashboard";
+        return "pages/dashboard";
     }
 
 
