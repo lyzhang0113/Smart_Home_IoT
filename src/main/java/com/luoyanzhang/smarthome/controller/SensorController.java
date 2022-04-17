@@ -5,10 +5,9 @@ import com.luoyanzhang.smarthome.entity.Temperature;
 import com.luoyanzhang.smarthome.repository.HumidityRepository;
 import com.luoyanzhang.smarthome.repository.TemperatureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/sensor")
@@ -34,5 +33,11 @@ public class SensorController {
         n.setData(data);
         humidityRepository.save(n);
         return "success";
+    }
+
+    @GetMapping("/get/humid")
+    public String getHumid() {
+        List<Humidity> humidityList = humidityRepository.findAllRecentHumidityData();
+        return humidityList.toString();
     }
 }
