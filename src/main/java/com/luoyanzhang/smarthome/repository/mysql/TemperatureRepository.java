@@ -1,6 +1,6 @@
-package com.luoyanzhang.smarthome.repository;
+package com.luoyanzhang.smarthome.repository.mysql;
 
-import com.luoyanzhang.smarthome.entity.Temperature;
+import com.luoyanzhang.smarthome.entity.mysql.Temperature;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,9 +1,9 @@
 package com.luoyanzhang.smarthome.service;
 
-import com.luoyanzhang.smarthome.entity.Humidity;
-import com.luoyanzhang.smarthome.entity.Temperature;
-import com.luoyanzhang.smarthome.repository.HumidityRepository;
-import com.luoyanzhang.smarthome.repository.TemperatureRepository;
+import com.luoyanzhang.smarthome.entity.mysql.Humidity;
+import com.luoyanzhang.smarthome.entity.mysql.Temperature;
+import com.luoyanzhang.smarthome.repository.mysql.HumidityRepository;
+import com.luoyanzhang.smarthome.repository.mysql.TemperatureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

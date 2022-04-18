@@ -1,4 +1,4 @@
-package com.luoyanzhang.smarthome.entity;
+package com.luoyanzhang.smarthome.entity.mysql;
 
 import lombok.Getter;
 import lombok.Setter;
