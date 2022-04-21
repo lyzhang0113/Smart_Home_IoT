@@ -7,10 +7,7 @@ import com.luoyanzhang.smarthome.repository.TemperatureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class SensorService {
@@ -21,8 +18,8 @@ public class SensorService {
     @Autowired
     HumidityRepository humidityRepository;
 
-    public Map<Date, Float> getRecentTemperatureData() {
-        Map<Date, Float> result = new LinkedHashMap<>();
+    public TreeMap<Date, Float> getRecentTemperatureData() {
+        TreeMap<Date, Float> result = new TreeMap<>();
         List<Temperature> list = temperatureRepository.findAllRecentTemperatureData();
         for (Temperature t : list) {
             result.put(t.getDate_created(), t.getData());
@@ -30,8 +27,8 @@ public class SensorService {
         return result;
     }
 
-    public Map<Date, Float> getRecentHumidityData() {
-        Map<Date, Float> result = new LinkedHashMap<>();
+    public TreeMap<Date, Float> getRecentHumidityData() {
+        TreeMap<Date, Float> result = new TreeMap<>();
         List<Humidity> list = humidityRepository.findAllRecentHumidityData();
         for (Humidity t : list) {
             result.put(t.getDate_created(), t.getData());
@@ -39,6 +36,20 @@ public class SensorService {
         return result;
     }
 
+    public Float getLastHourAverageTemperature() {
+        return Float.parseFloat("0.0");
+    }
 
+    public Float getLastHourAverageHumidity() {
+        return Float.parseFloat("0.0");
+    }
+
+    public Float getYesterdayAverageTemperature() {
+        return Float.parseFloat("0.0");
+    }
+
+    public Float getYesterdayAverageHumidity() {
+        return Float.parseFloat("0.0");
+    }
 
 }

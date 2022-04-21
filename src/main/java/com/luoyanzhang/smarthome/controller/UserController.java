@@ -32,7 +32,9 @@ public class UserController {
     @PostMapping("/login")
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
-                        Model model, HttpServletResponse response) {
+                        Model model,
+                        HttpServletRequest request,
+                        HttpServletResponse response) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
         Integer UID = userService.getUIDByUsername(username);
@@ -45,6 +47,8 @@ public class UserController {
             model.addAttribute("msg", "Incorrect Credentials!");
             return "login";
         }
+        userService.updateIpToUserByID(request.getRemoteAddr(), UID);
+
         Cookie uid = new Cookie("UID", u.getId().toString());
         uid.setMaxAge(24 * 60 * 60); // one day
         response.addCookie(uid);

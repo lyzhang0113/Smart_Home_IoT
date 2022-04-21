@@ -27,6 +27,9 @@ public class User implements Serializable {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "last_ip_address")
+    private String last_ip_address;
+
     @Column(name = "last_modified")
     private Date last_modified = new Date();
 
