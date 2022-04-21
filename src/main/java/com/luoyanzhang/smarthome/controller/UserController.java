@@ -1,10 +1,8 @@
 package com.luoyanzhang.smarthome.controller;
 
-import com.luoyanzhang.smarthome.entity.mysql.User;
-import com.luoyanzhang.smarthome.entity.redis.UserRedis;
-import com.luoyanzhang.smarthome.repository.mysql.UserRepositoryMysql;
-import com.luoyanzhang.smarthome.repository.redis.UserRepositoryRedis;
-import org.springframework.beans.BeanUtils;
+import com.luoyanzhang.smarthome.entity.User;
+//import com.luoyanzhang.smarthome.repository.redis.UserRepositoryRedis;
+import com.luoyanzhang.smarthome.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -18,11 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class UserController {
-    @Autowired
-    private UserRepositoryMysql userRepositoryMysql;
 
     @Autowired
-    private UserRepositoryRedis userRepositoryRedis;
+    private UserService userService;
 
     @GetMapping("/login")
     public String loginPage(Model model) {
@@ -39,7 +35,8 @@ public class UserController {
                         Model model, HttpServletResponse response) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-        User u = userRepositoryMysql.findByUsername(username);
+        Integer UID = userService.getUIDByUsername(username);
+        User u = userService.getUserByID(UID);
         if (u == null) {
             model.addAttribute("msg", "User Not Found!");
             return "login";
@@ -51,9 +48,6 @@ public class UserController {
         Cookie uid = new Cookie("UID", u.getId().toString());
         uid.setMaxAge(24 * 60 * 60); // one day
         response.addCookie(uid);
-        UserRedis user = new UserRedis();
-        BeanUtils.copyProperties(u, user);
-        userRepositoryRedis.save(user);
         return "redirect:dashboard";
     }
 
@@ -75,7 +69,7 @@ public class UserController {
         User n = new User();
         n.setUsername(username);
         n.setPassword(passwordEncoder.encode(password));
-        userRepositoryMysql.save(n);
+        userService.saveUser(n);
 
         model.addAttribute("msg", "Success! Please Log in.");
         return "redirect:login";

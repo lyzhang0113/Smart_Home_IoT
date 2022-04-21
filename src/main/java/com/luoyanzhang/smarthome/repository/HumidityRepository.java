@@ -1,8 +1,9 @@
-package com.luoyanzhang.smarthome.repository.mysql;
+package com.luoyanzhang.smarthome.repository;
 
-import com.luoyanzhang.smarthome.entity.mysql.Humidity;
+import com.luoyanzhang.smarthome.entity.Humidity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

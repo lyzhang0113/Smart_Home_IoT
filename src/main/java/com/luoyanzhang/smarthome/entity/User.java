@@ -1,15 +1,18 @@
-package com.luoyanzhang.smarthome.entity.mysql;
+package com.luoyanzhang.smarthome.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.redis.core.RedisHash;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Getter
 @Setter
-public class User {
+@RedisHash(value = "User", timeToLive = 3600)
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

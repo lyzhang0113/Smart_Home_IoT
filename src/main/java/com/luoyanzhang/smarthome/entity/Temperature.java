@@ -1,4 +1,4 @@
-package com.luoyanzhang.smarthome.entity.mysql;
+package com.luoyanzhang.smarthome.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
-public class Humidity {
+public class Temperature {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -20,5 +20,4 @@ public class Humidity {
 
     @Column(name = "date_created")
     private Date date_created = new Date();
-
 }
