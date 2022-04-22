@@ -15,10 +15,10 @@ import java.util.List;
 public class SensorController {
 
     @Autowired
-    TemperatureRepository temperatureRepository;
+    private TemperatureRepository temperatureRepository;
 
     @Autowired
-    HumidityRepository humidityRepository;
+    private HumidityRepository humidityRepository;
 
     @PostMapping("/temp")
     public ResponseEntity<String> saveTemp(@RequestParam("data") Float data) {

@@ -9,8 +9,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.time.format.TextStyle;
 import java.util.Date;
-import java.util.Map;
+import java.util.Locale;
 import java.util.TreeMap;
 
 @Controller
@@ -39,6 +43,9 @@ public class IndexController {
         model.addAttribute("curr_temp", temp_map.firstEntry().getValue());
         model.addAttribute("curr_humid", humid_map.firstEntry().getValue());
         model.addAttribute("humid_map", humid_map);
+        model.addAttribute("dayofweek", LocalDate.now().getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.US));
+        model.addAttribute("date", LocalDate.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)));
+
 
         return "pages/dashboard";
     }
