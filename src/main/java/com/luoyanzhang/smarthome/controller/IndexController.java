@@ -1,5 +1,6 @@
 package com.luoyanzhang.smarthome.controller;
 
+import com.luoyanzhang.smarthome.dto.AtHome;
 import com.luoyanzhang.smarthome.dto.Reading;
 import com.luoyanzhang.smarthome.dto.Weather;
 import com.luoyanzhang.smarthome.entity.User;
@@ -38,11 +39,15 @@ public class IndexController {
     public String dashboard(@CookieValue(name = "UID") String uid, Model model) {
         User u = userService.getUserByID(Integer.parseInt(uid));
         Reading recentReading = sensorService.getMostRecentSensorReading();
+        Reading yesterdayAvgReading = sensorService.getYesterdayAvgSensorReading();
+        AtHome atHome = sensorService.isUserAtHome(10);
         Weather weather = weatherService.getWeatherByIP(u.getLast_ip_address());
 
         model.addAttribute("weather", weather);
         model.addAttribute("username", u.getUsername());
         model.addAttribute("curr_reading", recentReading);
+        model.addAttribute("yesterday_reading", yesterdayAvgReading);
+        model.addAttribute("atHome", atHome);
         model.addAttribute("dayofweek", LocalDate.now().getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.US));
 
         return "pages/dashboard";

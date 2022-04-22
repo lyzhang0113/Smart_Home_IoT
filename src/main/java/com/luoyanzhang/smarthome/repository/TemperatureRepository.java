@@ -14,4 +14,7 @@ public interface TemperatureRepository extends CrudRepository<Temperature, Integ
 
     @Query(value = "SELECT * FROM temperature ORDER BY date_created DESC LIMIT 1", nativeQuery = true)
     Temperature findMostRecentTemperature();
+
+    @Query(value = "SELECT AVG(data) FROM temperature WHERE Date(date_created) = DATE(NOW() - INTERVAL 1 DAY)", nativeQuery = true)
+    Float findAvgYesterdayTemperature();
 }

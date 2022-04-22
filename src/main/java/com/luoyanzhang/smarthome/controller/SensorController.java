@@ -2,9 +2,11 @@ package com.luoyanzhang.smarthome.controller;
 
 import com.luoyanzhang.smarthome.entity.Brightness;
 import com.luoyanzhang.smarthome.entity.Humidity;
+import com.luoyanzhang.smarthome.entity.Motion;
 import com.luoyanzhang.smarthome.entity.Temperature;
 import com.luoyanzhang.smarthome.repository.BrightnessRepository;
 import com.luoyanzhang.smarthome.repository.HumidityRepository;
+import com.luoyanzhang.smarthome.repository.MotionRepository;
 import com.luoyanzhang.smarthome.repository.TemperatureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,9 @@ public class SensorController {
 
     @Autowired
     private BrightnessRepository brightnessRepository;
+
+    @Autowired
+    private MotionRepository motionRepository;
 
     @PostMapping("/temp")
     public ResponseEntity<String> saveTemp(@RequestParam("data") Float data) {
@@ -46,6 +51,13 @@ public class SensorController {
         Brightness b = new Brightness();
         b.setData(data);
         brightnessRepository.save(b);
+        return ResponseEntity.ok("Success");
+    }
+
+    @PostMapping("/motion")
+    public ResponseEntity<String> saveMotion() {
+        Motion m = new Motion();
+        motionRepository.save(m);
         return ResponseEntity.ok("Success");
     }
 

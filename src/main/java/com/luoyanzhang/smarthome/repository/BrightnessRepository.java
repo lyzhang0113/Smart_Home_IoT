@@ -7,4 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface BrightnessRepository extends CrudRepository<Brightness, Integer> {
     @Query(value = "SELECT * FROM brightness ORDER BY date_created DESC LIMIT 1", nativeQuery = true)
     Brightness findMostRecentBrightness();
+
+    @Query(value = "SELECT AVG(data) FROM brightness WHERE Date(date_created) = DATE(NOW() - INTERVAL 1 DAY)", nativeQuery = true)
+    Float findAvgYesterdayBrightness();
 }

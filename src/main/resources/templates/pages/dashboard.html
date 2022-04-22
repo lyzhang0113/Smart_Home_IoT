@@ -23,7 +23,8 @@
                         </div>
                     </div>
                     <p class="text-muted mt-3 mb-0">
-                        <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> [Temp from yesterday]
+                        <i aria-hidden="true" class="mdi mdi-alert-octagon mr-1"></i> Yesterday Avg:
+                        [[${yesterday_reading.temperature}]]°C
                     </p>
                 </div>
             </div>
@@ -43,7 +44,8 @@
                         </div>
                     </div>
                     <p class="text-muted mt-3 mb-0">
-                        <i class="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i> [Humid Yesterday]
+                        <i aria-hidden="true" class="mdi mdi-bookmark-outline mr-1"></i> Yesterday Avg:
+                        [[${yesterday_reading.humidity}]]%
                     </p>
                 </div>
             </div>
@@ -58,12 +60,13 @@
                         <div class="float-right">
                             <p class="mb-0 text-right">Brightness</p>
                             <div class="fluid-container">
-                                <h3 class="font-weight-medium text-right mb-0">5693</h3>
+                                <h3 class="font-weight-medium text-right mb-0">[[${curr_reading.brightness}]] lux</h3>
                             </div>
                         </div>
                     </div>
                     <p class="text-muted mt-3 mb-0">
-                        <i class="mdi mdi-calendar mr-1" aria-hidden="true"></i> Weekly Sales
+                        <i aria-hidden="true" class="mdi mdi-calendar mr-1"></i> Yesterday Avg:
+                        [[${yesterday_reading.brightness}]] lux
                     </p>
                 </div>
             </div>
@@ -78,12 +81,12 @@
                         <div class="float-right">
                             <p class="mb-0 text-right">At Home</p>
                             <div class="fluid-container">
-                                <h3 class="font-weight-medium text-right mb-0">246</h3>
+                                <h3 class="font-weight-medium text-right mb-0">[[${atHome.atHome}]]</h3>
                             </div>
                         </div>
                     </div>
                     <p class="text-muted mt-3 mb-0">
-                        <i class="mdi mdi-reload mr-1" aria-hidden="true"></i> Product-wise sales
+                        <i aria-hidden="true" class="mdi mdi-reload mr-1"></i> [[${atHome.last_report}]]
                     </p>
                 </div>
             </div>

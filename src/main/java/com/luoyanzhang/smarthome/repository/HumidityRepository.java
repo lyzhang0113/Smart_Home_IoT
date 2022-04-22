@@ -14,4 +14,7 @@ public interface HumidityRepository extends CrudRepository<Humidity, Integer> {
 
     @Query(value = "SELECT * FROM humidity ORDER BY date_created DESC LIMIT 1", nativeQuery = true)
     Humidity findMostRecentHumidity();
+
+    @Query(value = "SELECT AVG(data) FROM humidity WHERE Date(date_created) = DATE(NOW() - INTERVAL 1 DAY)", nativeQuery = true)
+    Float findAvgYesterdayHumidity();
 }
