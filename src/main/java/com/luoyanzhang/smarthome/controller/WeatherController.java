@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.net.URISyntaxException;
-import java.text.ParseException;
-
 @RestController
 public class WeatherController {
 
@@ -19,12 +16,7 @@ public class WeatherController {
 
     @GetMapping("/weather")
     public ResponseEntity<Weather> getWeather(@RequestParam(value = "q", defaultValue = "12180") String q) {
-        try {
-            return ResponseEntity.ok(weatherService.getWeatherByIP(q));
-        } catch (ParseException | URISyntaxException exception) {
-            System.out.println(exception.getMessage());
-            return ResponseEntity.internalServerError().build();
-        }
+        return ResponseEntity.ok(weatherService.getWeatherByIP(q));
     }
 
 }

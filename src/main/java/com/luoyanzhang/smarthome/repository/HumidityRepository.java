@@ -3,13 +3,15 @@ package com.luoyanzhang.smarthome.repository;
 import com.luoyanzhang.smarthome.entity.Humidity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 public interface HumidityRepository extends CrudRepository<Humidity, Integer> {
 
     @Query(value = "SELECT * FROM humidity ORDER BY date_created DESC LIMIT 10",
-    nativeQuery = true)
+            nativeQuery = true)
     List<Humidity> findAllRecentHumidityData();
+
+    @Query(value = "SELECT * FROM humidity ORDER BY date_created DESC LIMIT 1", nativeQuery = true)
+    Humidity findMostRecentHumidity();
 }

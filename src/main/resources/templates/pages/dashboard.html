@@ -18,7 +18,7 @@
                         <div class="float-right">
                             <p class="mb-0 text-right">Temperature</p>
                             <div class="fluid-container">
-                                <h3 class="font-weight-medium text-right mb-0">[[${curr_temp}]]°C</h3>
+                                <h3 class="font-weight-medium text-right mb-0">[[${curr_reading.temperature}]]°C</h3>
                             </div>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                         <div class="float-right">
                             <p class="mb-0 text-right">Humidity</p>
                             <div class="fluid-container">
-                                <h3 class="font-weight-medium text-right mb-0">[[${curr_humid}]]%</h3>
+                                <h3 class="font-weight-medium text-right mb-0">[[${curr_reading.humidity}]]%</h3>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                             <i class="mdi mdi-poll-box text-success icon-lg"></i>
                         </div>
                         <div class="float-right">
-                            <p class="mb-0 text-right">Sales</p>
+                            <p class="mb-0 text-right">Brightness</p>
                             <div class="fluid-container">
                                 <h3 class="font-weight-medium text-right mb-0">5693</h3>
                             </div>
@@ -76,7 +76,7 @@
                             <i class="mdi mdi-account-location text-info icon-lg"></i>
                         </div>
                         <div class="float-right">
-                            <p class="mb-0 text-right">Employees</p>
+                            <p class="mb-0 text-right">At Home</p>
                             <div class="fluid-container">
                                 <h3 class="font-weight-medium text-right mb-0">246</h3>
                             </div>
@@ -97,86 +97,28 @@
                     <div class="weather-date-location">
                         <h3>[[${dayofweek}]]</h3>
                         <p class="text-gray">
-                            <span class="weather-date">[[${date}]]</span>
-                            <span class="weather-location">London, UK</span>
+                            <span class="weather-date">[[${weather.today.date}]]</span>
+                            <span class="weather-location">[[${weather.location}]]</span>
                         </p>
                     </div>
                     <div class="weather-data d-flex">
                         <div class="mr-auto">
-                            <h4 class="display-3">21
+                            <h4 class="display-3">[[${weather.today.temp_c}]]
                                 <span class="symbol">&deg;</span>C</h4>
                             <p>
-                                Mostly Cloudy
+                                [[${weather.today.condition}]]
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="card-body p-0">
                     <div class="d-flex weakly-weather">
-                        <div class="weakly-weather-item">
-                            <p class="mb-0">
-                                Sun
-                            </p>
+                        <div class="weakly-weather-item" th:each="day: ${weather.forecast.days}">
+                            <p class="mb-0" th:text="${day.dayofweek}"></p>
                             <!--                            <i class="mdi mdi-weather-cloudy"></i>-->
                             <img alt="" class="mdi" height="30"
-                                 src="http://cdn.weatherapi.com/weather/64x64/night/116.png" width="30"></img>
-                            <p class="mb-0">
-                                30°
-                            </p>
-                        </div>
-                        <div class="weakly-weather-item">
-                            <p class="mb-1">
-                                Mon
-                            </p>
-                            <i class="mdi mdi-weather-hail"></i>
-                            <p class="mb-0">
-                                31°
-                            </p>
-                        </div>
-                        <div class="weakly-weather-item">
-                            <p class="mb-1">
-                                Tue
-                            </p>
-                            <i class="mdi mdi-weather-partlycloudy"></i>
-                            <p class="mb-0">
-                                28°
-                            </p>
-                        </div>
-                        <div class="weakly-weather-item">
-                            <p class="mb-1">
-                                Wed
-                            </p>
-                            <i class="mdi mdi-weather-pouring"></i>
-                            <p class="mb-0">
-                                30°
-                            </p>
-                        </div>
-                        <div class="weakly-weather-item">
-                            <p class="mb-1">
-                                Thu
-                            </p>
-                            <i class="mdi mdi-weather-pouring"></i>
-                            <p class="mb-0">
-                                29°
-                            </p>
-                        </div>
-                        <div class="weakly-weather-item">
-                            <p class="mb-1">
-                                Fri
-                            </p>
-                            <i class="mdi mdi-weather-snowy-rainy"></i>
-                            <p class="mb-0">
-                                31°
-                            </p>
-                        </div>
-                        <div class="weakly-weather-item">
-                            <p class="mb-1">
-                                Sat
-                            </p>
-                            <i class="mdi mdi-weather-snowy"></i>
-                            <p class="mb-0">
-                                32°
-                            </p>
+                                 src="" th:src="@{${day.icon}}" width="30"></img>
+                            <p class="mb-0" th:text="${day.temp_c} + '°C'"></p>
                         </div>
                     </div>
                 </div>
