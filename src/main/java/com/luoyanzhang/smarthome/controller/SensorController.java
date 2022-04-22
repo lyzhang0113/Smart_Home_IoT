@@ -61,7 +61,6 @@ public class SensorController {
         return ResponseEntity.ok("Success");
     }
 
-
     @GetMapping("/get/humid")
     public ResponseEntity<List<Humidity>> getHumid() {
         List<Humidity> humidityList = humidityRepository.findAllRecentHumidityData();

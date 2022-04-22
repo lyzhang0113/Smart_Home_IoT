@@ -17,4 +17,7 @@ public interface TemperatureRepository extends CrudRepository<Temperature, Integ
 
     @Query(value = "SELECT AVG(data) FROM temperature WHERE Date(date_created) = DATE(NOW() - INTERVAL 1 DAY)", nativeQuery = true)
     Float findAvgYesterdayTemperature();
+
+    @Query(value = "SELECT * FROM temperature WHERE date_created > (NOW() - INTERVAL 24 HOUR)", nativeQuery = true)
+    List<Temperature> findAllLast24HourReadings();
 }
