@@ -32,17 +32,15 @@ public class RedisConfiguration {
     }
     @Bean
     public RedisCacheConfiguration cacheConfiguration() {
-        RedisCacheConfiguration cacheConfig = RedisCacheConfiguration.defaultCacheConfig()
+        return RedisCacheConfiguration.defaultCacheConfig()
                 .entryTtl(Duration.ofSeconds(600))
                 .disableCachingNullValues();
-        return cacheConfig;
     }
     @Bean
     public RedisCacheManager cacheManager() {
-        RedisCacheManager rcm = RedisCacheManager.builder(redisConnectionFactory())
+        return RedisCacheManager.builder(redisConnectionFactory())
                 .cacheDefaults(cacheConfiguration())
                 .transactionAware()
                 .build();
-        return rcm;
     }
 }
