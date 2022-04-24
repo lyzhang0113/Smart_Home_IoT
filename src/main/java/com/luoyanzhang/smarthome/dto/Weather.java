@@ -21,6 +21,7 @@ public class Weather {
         final String dayofweek;
         final Float temp_c;
         final Float temp_f;
+        final Float humidity;
         final String condition;
         final URI icon;
     }

@@ -23,8 +23,8 @@
                         </div>
                     </div>
                     <p class="text-muted mt-3 mb-0">
-                        <i aria-hidden="true" class="mdi mdi-alert-octagon mr-1"></i> Yesterday Avg:
-                        [[${yesterday_reading.temperature}]]°C
+                        <i aria-hidden="true" class="mdi mdi-alert-octagon mr-1"></i>
+                        [['YDA Avg: ' + ${#numbers.formatDecimal(yesterday_reading.temperature, 0, 1)} + '°C']]
                     </p>
                 </div>
             </div>
@@ -44,8 +44,8 @@
                         </div>
                     </div>
                     <p class="text-muted mt-3 mb-0">
-                        <i aria-hidden="true" class="mdi mdi-bookmark-outline mr-1"></i> Yesterday Avg:
-                        [[${yesterday_reading.humidity}]]%
+                        <i aria-hidden="true" class="mdi mdi-bookmark-outline mr-1"></i>
+                        [['YDA Avg: ' + ${#numbers.formatDecimal(yesterday_reading.humidity, 0, 1)} + '%']]
                     </p>
                 </div>
             </div>
@@ -65,8 +65,8 @@
                         </div>
                     </div>
                     <p class="text-muted mt-3 mb-0">
-                        <i aria-hidden="true" class="mdi mdi-calendar mr-1"></i> Yesterday Avg:
-                        [[${yesterday_reading.brightness}]] lux
+                        <i aria-hidden="true" class="mdi mdi-calendar mr-1"></i>
+                        [['YDA Avg: ' + ${#numbers.formatDecimal(yesterday_reading.brightness, 0, 1)} + ' lux']]
                     </p>
                 </div>
             </div>
@@ -86,7 +86,8 @@
                         </div>
                     </div>
                     <p class="text-muted mt-3 mb-0">
-                        <i aria-hidden="true" class="mdi mdi-reload mr-1"></i> [[${atHome.last_report}]]
+                        <i aria-hidden="true" class="mdi mdi-reload mr-1"></i>
+                        [['Last Activity: ' + ${#dates.format(atHome.last_report, 'MM-dd, HH:mm')}]]
                     </p>
                 </div>
             </div>
@@ -189,7 +190,7 @@
                                     xAxis: {
                                         type: 'datetime',
                                         dateTimeLabelFormats: { // don't display the dummy year
-                                            millisecond: '%H:%M:%S.%L',
+                                            millisecond: '%H:%M:%S',
                                             second: '%H:%M:%S',
                                             minute: '%H:%M',
                                             hour: '%H:%M',
@@ -250,7 +251,6 @@
                                     }],
                                     tooltip: {
                                         headerFormat: '<b>{series.name}</b><br>'
-                                        // pointFormat: '{point.x:%e. %b}: {point.y:.2f} m'
                                     },
 
                                     plotOptions: {
@@ -271,21 +271,21 @@
                                         data: temp,
                                         yAxis: 0,
                                         tooltip: {
-                                            valueSuffix: '°C'
+                                            pointFormat: '{point.x:%b %e, %H:%M}: {point.y:.0f}°C'
                                         }
                                     }, {
                                         name: "Humidity",
                                         data: humid,
                                         yAxis: 1,
                                         tooltip: {
-                                            valueSuffix: '%'
+                                            pointFormat: '{point.x:%b %e, %H:%M}: {point.y:.0f}%'
                                         }
                                     }, {
                                         name: "Brightness",
                                         data: bright,
                                         yAxis: 2,
                                         tooltip: {
-                                            valueSuffix: ' lux'
+                                            pointFormat: '{point.x:%b %e, %H:%M}: {point.y:.0f} lux'
                                         }
                                     }],
 

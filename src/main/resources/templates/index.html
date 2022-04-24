@@ -55,8 +55,11 @@
   <div class="banner" >
     <div class="container">
         <h1 class="font-weight-semibold">Smart Home</h1>
-        <h5 class="font-weight-normal text-muted pb-3">This project will develop a smart home device prototype along with a simple web user interface using Node-RED, Raspberry Pi, and various sensors, the team will demonstrate the use of a smart home system.
+        <h5 class="font-weight-normal text-muted pb-3">This project will develop a smart home device prototype along
+            with a simple web user interface using Node-RED, Raspberry Pi, and various sensors, the team will
+            demonstrate the use of a smart home system.
             <img alt="" class="" height="380px" th:src="@{img/pot.png}">
+        </h5>
     </div>
   </div>
   <div class="content-wrapper">
@@ -66,43 +69,59 @@
           <h2>How does it work?</h2>
           <h6 class="section-subtitle text-muted">The team will make use of various sensors such as a temperature/humidity sensor, a light sensor, and a motion sensor, to collect necessary data to be displayed to the end-user through a web-UI and an on-board display. </h6>
         </div>
-        <div class="d-md-flex justify-content-between">
-          <div class="grid-margin d-flex justify-content-start">
-            <div class="features-width">
-              <img th:src="@{img/Group12.svg}" alt="" class="img-icons">
-              <h5 class="py-3"><br>Temperature</h5> Measurement
-              <p class="text-muted">The device will automatically measure the ambient temperature.</p>
-              <!--a href="#"><p class="readmore-link">Readmore</p></a-->
-            </div>
+          <div class="d-md-flex justify-content-between">
+              <div class="grid-margin d-flex justify-content-center">
+                  <div class="features-width">
+                      <img alt="" class="img-icons" height="120"
+                           src="https://raw.githubusercontent.com/philanri/weather-icons/bc01cf47144d32e826e59656b6c51b214478e605/images/svg/e_1_temperature.svg"
+                           width="120">
+                      <h5 class="py-3"><br>Temperature</h5> Measurement
+                      <p class="text-muted">The device will automatically measure the ambient temperature.</p>
+                      <!--a href="#"><p class="readmore-link">Readmore</p></a-->
+                  </div>
+              </div>
+              <div class="grid-margin d-flex justify-content-center">
+                  <div class="features-width">
+                      <img alt="" class="img-icons" height="120"
+                           src="https://raw.githubusercontent.com/philanri/weather-icons/bc01cf47144d32e826e59656b6c51b214478e605/images/svg/g_4_waterdrop.svg"
+                           width="120">
+                      <h5 class="py-3"><br>Humidity</h5> Measurement
+                      <p class="text-muted">The device will automatically measure the ambient humidity.</p>
+                      <!--a href="#"><p class="readmore-link">Readmore</p></a-->
+                  </div>
+              </div>
+              <div class="grid-margin d-flex justify-content-center">
+                  <div class="features-width">
+                      <img alt="" class="img-icons" height="120"
+                           src="https://raw.githubusercontent.com/philanri/weather-icons/main/images/svg/a_1_sunny.svg"
+                           width="120">
+                      <h5 class="py-3"><br>Brightness</h5> Measurement
+                      <p class="text-muted">The device will automatically measure the ambient brightness.</p>
+                      <!--a href="#"><p class="readmore-link">Readmore</p></a-->
+                  </div>
+              </div>
+              <div class="grid-margin d-flex justify-content-center">
+                  <div class="features-width">
+                      <img alt="" class="img-icons" height="120"
+                           src="https://community-openhab-org.s3.dualstack.eu-central-1.amazonaws.com/original/3X/8/b/8b94f3c043d3c3d22e7253d9ff9bc9d5276f4740.svg"
+                           width="80">
+                      <h5 class="py-3"><br>Motion</h5> Activity
+                      <p class="text-muted">The device will detect and record any motion happened.</p>
+                      <!--a href="#"><p class="readmore-link">Readmore</p></a-->
+                  </div>
+              </div>
           </div>
-          <div class="grid-margin d-flex justify-content-center">
-            <div class="features-width">
-              <img th:src="@{img/Group7.svg}" alt="" class="img-icons">
-              <h5 class="py-3"><br>Humidity</h5> Measurement
-              <p class="text-muted">The device will automatically measure the ambient humidity.</p>
-              <!--a href="#"><p class="readmore-link">Readmore</p></a-->
-            </div>
-          </div>
-<!--          <div class="grid-margin d-flex justify-content-end">-->
-<!--            <div class="features-width">-->
-<!--              <img th:src="@{img/Group5.svg}" alt="" class="img-icons">-->
-<!--              <h5 class="py-3">Remind to<br>Fertilize plants</h5>-->
-<!--              <p class="text-muted">The pot will remind you when to fertilize the plant.</p>-->
-<!--              &lt;!&ndash;a href="#"><p class="readmore-link">Readmore</p></a&ndash;&gt;-->
-<!--            </div>-->
-<!--          </div>-->
-        </div>
       </section>     
       <section class="digital-marketing-service" id="digital-marketing-section">
           <div class="row align-items-center">
               <div class="col-12 col-lg-5 grid-margin grid-margin-lg-0" data-aos="fade-right">
-                  <h3 class="m-0">Modular Design</h3>
+                  <h3 class="m-0">System Structure Design</h3>
                   <div class="col-lg-7 col-xl-6 p-0">
                       <p class="font-weight-medium text-muted">[Enter Design Deatails]</p>
                   </div>
               </div>
-              <div class="col-12 col-lg-7 p-0 img-digital grid-margin grid-margin-lg-0" data-aos="fade-left">
-                  <img alt="" height="400px" th:src="@{img/pot-explode.png}">
+              <div class="col-12 col-lg-7 p-0 img-digital grid-margin grid-margin-lg-1" data-aos="fade-left">
+                  <img alt="" class="img-fluid" th:src="@{img/UIandDatabase.svg}">
               </div>
           </div>
         <div class="row align-items-center">
@@ -121,98 +140,6 @@
 <!--            </div>-->
         </div>
       </section>
-        <section class="case-studies" id="case-studies-section">
-            <div class="row grid-margin">
-                <div class="col-12 text-center pb-5">
-                    <h2>More Pictures</h2>
-                    <!--h6 class="section-subtitle text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum.</h6-->
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in">
-                    <div class="card color-cards">
-                        <div class="card-body p-0">
-                            <div class="bg-primary text-center card-contents">
-                                <div class="card-image">
-                                    <img alt="" class="" height="255px" th:src="@{img/lighting.PNG}">
-                                </div>
-                                <!--                          <div class="card-desc-box d-flex align-items-center justify-content-around">-->
-                                <!--                            <div>-->
-                                <!--                              <h6 class="text-white pb-2 px-3">Know more about Online marketing</h6>-->
-                                <!--                              <button class="btn btn-white">Read More</button>-->
-                                <!--                            </div>-->
-                                <!--                          </div>-->
-                            </div>
-                            <div class="card-details text-center pt-4">
-                                <h6 class="m-0 pb-1">Lighting and Watering</h6>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="card color-cards">
-                        <div class="card-body p-0">
-                            <div class="bg-warning text-center card-contents">
-                                <div class="card-image">
-                                    <img alt="" class="" height="260px" th:src="@{img/reservoir.png}">
-                                </div>
-                                <!--                          <div class="card-desc-box d-flex align-items-center justify-content-around">-->
-                                <!--                            <div>-->
-                                <!--                              <h6 class="text-white pb-2 px-3">Know more about Web Development</h6>-->
-                                <!--                              <button class="btn btn-white">Read More</button>-->
-                                <!--                            </div>-->
-                                <!--                          </div>-->
-                            </div>
-                            <div class="card-details text-center pt-4">
-                                <h6 class="m-0 pb-1">Reservoir</h6>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="card color-cards">
-                        <div class="card-body p-0">
-                            <div class="bg-violet text-center card-contents">
-                                <div class="card-image">
-                                    <img alt="" class="" height="280px" th:src="@{img/powersensors.png}">
-                                </div>
-                                <!--                          <div class="card-desc-box d-flex align-items-center justify-content-around">-->
-                                <!--                            <div>-->
-                                <!--                              <h6 class="text-white pb-2 px-3">Know more about Web Designing</h6>-->
-                                <!--                              <button class="btn btn-white">Read More</button>-->
-                                <!--                            </div>-->
-                                <!--                          </div>-->
-                            </div>
-                            <div class="card-details text-center pt-4">
-                                <h6 class="m-0 pb-1">Power, Sensors and Wiring</h6>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 stretch-card" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="card color-cards">
-                        <div class="card-body p-0">
-                            <div class="bg-success text-center card-contents">
-                                <div class="card-image">
-                                    <img alt="" class="" height="290px" th:src="@{img/overallform.png}">
-                                </div>
-                                <!--                          <div class="card-desc-box d-flex align-items-center justify-content-around">-->
-                                <!--                            <div>-->
-                                <!--                              <h6 class="text-white pb-2 px-3">Know more about Software Development</h6>-->
-                                <!--                              <button class="btn btn-white">Read More</button>-->
-                                <!--                            </div>-->
-                                <!--                          </div>-->
-                            </div>
-                            <div class="card-details text-center pt-4">
-                                <h6 class="m-0 pb-1">Overall Integration</h6>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <section class="customer-feedback" id="feedback-section">
             <div class="row">
                 <div class="col-12 text-center pb-5">
@@ -259,7 +186,7 @@
       <section class="contact-details" id="contact-details-section">
         <div class="row text-center text-md-left">
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
-            <img alt="" class="pt-2" th:src="@{img/smarthome_logo.png}" width="150%">
+              <img alt="" class="pt-2" height="230" th:src="@{img/smarthome_logo.png}" width="300">
             <div class="pt-2">
               <p class="text-muted m-0"></p>
               <p class="text-muted m-0"></p>
@@ -294,10 +221,12 @@
           </div>
         </div>  
       </section>
-      <footer class="border-top">
-        <p class="text-center text-muted pt-4">Copyright © 2022<a class="px-1" href="https://pot.doby2333.com:8081/">Smart Home
-          Team</a>All rights reserved.</p>
-      </footer>
+        <footer class="border-top">
+            <p class="text-center text-muted pt-4">Copyright © 2022<a class="px-1"
+                                                                      href="https://iot.doby2333.com:8081/">Smart
+                Home
+                Team</a>All rights reserved.</p>
+        </footer>
     </div> 
   </div>
   <script th:src="@{vendors/jquery/jquery.min.js}"></script>

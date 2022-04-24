@@ -39,6 +39,7 @@ public class WeatherService {
                     LocalDate.now().getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.US),
                     current.getFloat("temp_c"),
                     current.getFloat("temp_f"),
+                    current.getFloat("humidity"),
                     condition.getString("text"),
                     new URI("http:" + condition.getString("icon")));
 
@@ -53,6 +54,7 @@ public class WeatherService {
                         LocalDate.parse(obj.getString("date")).getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.US),
                         day_detail.getFloat("avgtemp_c"),
                         day_detail.getFloat("avgtemp_f"),
+                        day_detail.getFloat("avghumidity"),
                         day_detail.getJSONObject("condition").getString("text"),
                         new URI("http:" + day_detail.getJSONObject("condition").getString("icon")));
                 forcast_days.add(day);
