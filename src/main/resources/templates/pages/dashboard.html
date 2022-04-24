@@ -177,6 +177,11 @@
                             }
 
                             function drawChart(temp, humid, bright) {
+                                Highcharts.setOptions({
+                                    time: {
+                                        timezoneOffset: +4 * 60
+                                    }
+                                });
                                 Highcharts.chart('container', {
                                     chart: {
                                         type: 'spline'
