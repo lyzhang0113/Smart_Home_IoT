@@ -35,17 +35,17 @@
                         <span class="profile-text">Hello, [[${username}]]!</span>
                         <img class="img-xs rounded-circle" th:src="@{/images/faces/face1.jpg}" alt="Profile image">
                     </a>
-                    <!--                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">-->
-                    <!--                        <a class="dropdown-item mt-2">-->
-                    <!--                            Manage Accounts-->
-                    <!--                        </a>-->
-                    <!--                        <a class="dropdown-item">-->
-                    <!--                            Change Password-->
-                    <!--                        </a>-->
-                    <!--                        <a class="dropdown-item">-->
-                    <!--                            Sign Out-->
-                    <!--                        </a>-->
-                    <!--                    </div>-->
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+<!--                        <a class="dropdown-item mt-2">-->
+<!--                            Manage Accounts-->
+<!--                        </a>-->
+<!--                        <a class="dropdown-item">-->
+<!--                            Change Password-->
+<!--                        </a>-->
+                        <a class="dropdown-item" th:href="logout">
+                            Sign Out
+                        </a>
+                    </div>
                 </li>
             </ul>
             <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">

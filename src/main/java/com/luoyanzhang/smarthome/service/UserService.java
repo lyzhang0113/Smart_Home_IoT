@@ -33,7 +33,9 @@ public class UserService {
     }
 
     public Integer getUIDByUsername(String uname) {
-        return userRepository.findByUsername(uname).getId();
+        User u = userRepository.findByUsername(uname);
+        if (u == null) return null;
+        return u.getId();
     }
 
 }

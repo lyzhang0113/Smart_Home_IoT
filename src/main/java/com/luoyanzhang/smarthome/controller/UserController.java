@@ -38,11 +38,11 @@ public class UserController {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
         Integer UID = userService.getUIDByUsername(username);
-        User u = userService.getUserByID(UID);
-        if (u == null) {
+        if (UID == null) {
             model.addAttribute("msg", "User Not Found!");
             return "login";
         }
+        User u = userService.getUserByID(UID);
         if (!passwordEncoder.matches(password, u.getPassword())) {
             model.addAttribute("msg", "Incorrect Credentials!");
             return "login";
@@ -53,6 +53,14 @@ public class UserController {
         uid.setMaxAge(24 * 60 * 60); // one day
         response.addCookie(uid);
         return "redirect:dashboard";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletResponse response) {
+        Cookie uid = new Cookie("UID", null);
+        uid.setMaxAge(0);
+        response.addCookie(uid);
+        return "redirect:index";
     }
 
     @GetMapping("/register")
@@ -68,6 +76,12 @@ public class UserController {
     public String register(@RequestParam("username") String username,
                            @RequestParam("password") String password,
                            Model model) {
+        Integer UID = userService.getUIDByUsername(username);
+        if (UID != null) {
+            model.addAttribute("msg", "User Already Exist!");
+            return "register";
+        }
+
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
         User n = new User();

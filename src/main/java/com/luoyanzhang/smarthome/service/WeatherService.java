@@ -22,7 +22,7 @@ import java.util.Locale;
 public class WeatherService {
     public Weather getWeatherByIP(String IP) {
         try {
-            if (IP.isEmpty() || IP.isBlank() || IP.equals("0:0:0:0:0:0:0:1")) IP = "12180";
+            if (IP == null || IP.isEmpty() || IP.isBlank() || IP.equals("0:0:0:0:0:0:0:1")) IP = "12180";
             final String uri = "http://api.weatherapi.com/v1/forecast.json?key=bcb8176380b14ffbbec194410222104&q=" + IP + "&days=10&aqi=no";
             RestTemplate restTemplate = new RestTemplate();
             String result = restTemplate.getForObject(uri, String.class);
